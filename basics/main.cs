@@ -32,6 +32,12 @@ namespace Basic
             // :N0 represents decimal separator
             Console.WriteLine($"Int max, min: {int.MaxValue:N0}, {int.MinValue}");
 
+            // Casting numbers
+            double t1 = 1.23;
+            int t2 = (int)t1;
+            int t3 = Convert.ToInt32(t2);
+            Console.WriteLine($"{t1} casted to {t2} / {t3}");
+
             // Object
             object name = "Bob";
             object height = 1.54;
@@ -43,6 +49,16 @@ namespace Basic
             x = 12;
             x = new[] { 1, 2, 3 };
             Console.WriteLine($"Dynamic type containing array x: {x.Length}");
+
+            // Exception
+            try
+            {
+                int age = int.Parse("hello");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.GetType()}: {ex.Message}");
+            }
         }
     }
 }

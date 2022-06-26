@@ -65,6 +65,20 @@ Printing of values may be formatted with decimal separator.
 Console.WriteLine($"Int max, min: {int.MaxValue:N0}, {int.MinValue}");
 ```
 
+Casting numbers legally can be done with `System.Convert` or traditional cast. But `System.Convert` does correct rounding instead of truncation.
+
+```csharp
+double t1 = 1.23;
+
+// Method 1: traditional cast
+int t2 = (int)t1;
+
+// Method 2: easier cast
+int t3 = Convert.ToInt32(t2);
+
+Console.WriteLine($"{t1} casted to {t2} / {t3}");
+```
+
 ### Object and dynamic types
 
 The `object` variable can be used to flexibly define type of the variable.
@@ -82,4 +96,19 @@ dynamic x = "Hello";
 x = 12;
 x = new[] { 1, 2, 3 };
 Console.WriteLine($"Dynamic type containing array x: {x.Length}");
+```
+
+### Handling Exceptions
+
+Exceptions can be caught and checked.
+
+```csharp
+try
+{
+    int age = int.Parse("hello");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"{ex.GetType()}: {ex.Message}");
+}
 ```

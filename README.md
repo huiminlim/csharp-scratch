@@ -112,3 +112,33 @@ catch (Exception ex)
     Console.WriteLine($"{ex.GetType()}: {ex.Message}");
 }
 ```
+
+## OOP
+
+### Namespace
+
+Namespaces may be defined in block style.
+
+```csharp
+public class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, world!");
+    }
+}
+```
+
+In C# 10.0 (targeting .NET 6.0) and above, namespace declaration may be simplified.
+
+```csharp
+// Class in this file is in this namespace
+namespace OOP.Test;
+public class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, world!");
+    }
+}
+```

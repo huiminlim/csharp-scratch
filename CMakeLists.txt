@@ -45,3 +45,14 @@ set_property( TARGET basic PROPERTY VS_DOTNET_REFERENCES
               "System.Core"
               "System.Data"
 )
+
+# Create LINQ app
+add_executable( linq linq/main.cs )
+set_property( TARGET basic PROPERTY VS_DOTNET_TARGET_FRAMEWORK_VERSION "v4.8" )
+set_property( TARGET basic PROPERTY VS_DOTNET_REFERENCES
+              "Microsoft.CSharp"
+              "System"
+              "System.Core"
+              "System.Data"
+)
+

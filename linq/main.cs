@@ -10,6 +10,10 @@ namespace Learning
         {
             Console.WriteLine("Hello, world!");
 
+            /*
+             *  IEnumerable<>
+             */
+
             // String array as a sequence that implements IEnumerable<string>
             string[] names = new[] { "Michael", "Pam", "Jim", "Dwight",
                 "Angela", "Kevin", "Toby", "Creed" };
@@ -54,6 +58,36 @@ namespace Learning
             }
             Console.WriteLine();
 
+            /*
+             *  Sets and Bags
+             */
+            string[] cohort1 = new[] { "Rachel", "Gareth", "Jonathan", "George" };
+            string[] cohort2 = new[] { "Jack", "Stephen", "Daniel", "Jack", "Jared" };
+            string[] cohort3 = new[] { "Declan", "Jack", "Jack", "Jasmine", "Conor" };
+
+            // Converting string array to distinct items (set)
+            var distinct = cohort3.Distinct();
+            foreach (string name in distinct)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
+
+            // Intersect
+            var intersect = cohort3.Intersect(cohort2);
+            foreach (string name in intersect)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
+
+            // Except
+            var except = cohort2.Except(cohort3);
+            foreach (string name in except)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
         }
 
         // Function to test if string is length > 3
